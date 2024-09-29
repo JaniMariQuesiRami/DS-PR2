@@ -1,0 +1,6 @@
+Total de frases únicas: 46478
+Promedio de palabras por frase: 1.87
+Participante con más frases: 36 (1535 frases)
+Promedio de frases por participante: 714.98
+Palabra más común: 'road' (Aparece 2754 veces)
+Letra más común: 'e' (Aparece 71986 veces)
