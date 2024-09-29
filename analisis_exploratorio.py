@@ -35,8 +35,12 @@ most_common_word = Counter(all_words).most_common(1)[0]
 all_letters = ''.join(train_data['phrase']).replace(' ', '')
 most_common_letter = Counter(all_letters).most_common(1)[0]
 
+# Cantidad total de participantes
+total_participants = len(train_data['participant_id'].unique())
+
 # Resultados
 print(f"Total de frases únicas: {num_phrases}")
+print(f"Cantidad total de participantes: {total_participants}")
 print(f"Promedio de palabras por frase: {avg_words_per_phrase:.2f}")
 print(f"Participante con más frases: {top_participant} ({top_participant_count} frases)")
 print(f"Promedio de frases por participante: {avg_phrases_per_participant:.2f}")
@@ -46,6 +50,7 @@ print(f"Letra más común: '{most_common_letter[0]}' (Aparece {most_common_lette
 # Guardar resultados en un archivo de texto
 with open(os.path.join(output_dir, 'resumen_datos.txt'), 'w') as f:
     f.write(f"Total de frases únicas: {num_phrases}\n")
+    f.write(f"Cantidad total de participantes: {total_participants}\n")
     f.write(f"Promedio de palabras por frase: {avg_words_per_phrase:.2f}\n")
     f.write(f"Participante con más frases: {top_participant} ({top_participant_count} frases)\n")
     f.write(f"Promedio de frases por participante: {avg_phrases_per_participant:.2f}\n")

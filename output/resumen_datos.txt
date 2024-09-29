@@ -1,4 +1,5 @@
 Total de frases únicas: 46478
+Cantidad total de participantes: 94
 Promedio de palabras por frase: 1.87
 Participante con más frases: 36 (1535 frases)
 Promedio de frases por participante: 714.98
