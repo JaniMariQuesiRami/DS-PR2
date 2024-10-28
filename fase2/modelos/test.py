@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+
+# Datos de iteraciones y scores
+iterations = [2, 52, 102, 152, 202, 252, 302, 352, 402, 452, 502, 552, 602, 652, 702, 752, 802, 852, 902, 952, 1000]
+scores = [
+    0.9166666666666666, 0.7588858155331458, 0.7271788019198072, 0.7189857200612361,
+    0.7126612621576933, 0.6986407808583333, 0.6897266821932638, 0.6807323282630797,
+    0.6775753596816588, 0.6727338439455264, 0.6790226746550817, 0.6742700924400526,
+    0.6822204057364558, 0.6828098960211993, 0.6775237204096639, 0.6821356799008048,
+    0.684492964075648, 0.6844515163540665, 0.6806884698465172, 0.6818655264864236,
+    0.6809391442319709
+]
+
+# Crear la gráfica
+plt.figure(figsize=(10, 6))
+plt.plot(iterations, scores, marker='o', color='b', linestyle='-')
+plt.title("Evolución del Score Basado en Levenshtein a lo Largo de las Iteraciones")
+plt.xlabel("Iteraciones")
+plt.ylabel("Score")
+plt.grid(True)
+plt.show()
