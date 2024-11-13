@@ -15,7 +15,7 @@ const MainComponent = () => {
     { id: 3, name: "1383 william lanier", video: "./assets/3.mov" }
   ];
 
-  const models = ["Seq2Seq", "Transformer", "CTC"];
+  const models = ["CTC", "Seq2Seq", "Transformer"];
 
   const handleSubmit = () => {
     if (selectedVisualization === null || !selectedModel) {
@@ -52,7 +52,6 @@ const MainComponent = () => {
                   className="video-player"
                   url={vis.video}
                   width="100%"
-                  height="100%"
                   loop
                   playing
                   muted

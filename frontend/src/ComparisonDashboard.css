@@ -1,0 +1,53 @@
+/* ComparisonDashboard.css */
+.dashboard {
+    margin-top: 160px;
+    text-align: center;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .graph-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .graph-card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    width: 500px;
+    text-align: center;
+  }
+
+  .graph-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .graph-card h2 {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .graph-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+  }
+  
+  .lev-score {
+    font-size: 4.5rem;
+    color: #00ffab;
+    margin-top: 60px;
+    text-shadow: 0 0 15px #00ffab, 0 0 10px #0056b3;
+  }
+  
