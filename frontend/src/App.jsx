@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import './App.css'; // Asegúrate de tener estilos básicos
-import logo from './assets/logo.png'; // Import the logo
-
+import ReactPlayer from 'react-player';
+import './App.css';
+import logo from './assets/logo.png';
 
 const App = () => {
   const [selectedVisualization, setSelectedVisualization] = useState(null);
-  const [selectedModel, setSelectedModel] = useState(null); // Track the selected model
+  const [selectedModel, setSelectedModel] = useState(null);
 
   const visualizations = [
-    { id: 1, name: "Visualization 1" },
-    { id: 2, name: "Visualization 2" },
-    { id: 3, name: "Visualization 3" }
+    { id: 1, name: "Visualization 1", video: "./assets/1.mov" },
+    { id: 2, name: "Visualization 2", video: "./assets/2.mov" },
+    { id: 3, name: "Visualization 3", video: "./assets/3.mov" }
   ];
 
   const models = ["Seq2Seq", "Transformer", "CTC"];
@@ -21,7 +21,6 @@ const App = () => {
       return;
     }
 
-    // Replace with your backend endpoint
     fetch("http://localhost:5000/predict", {
       method: "POST",
       headers: {
@@ -53,7 +52,14 @@ const App = () => {
               onClick={() => setSelectedVisualization(vis.id)}
             >
               <h2>{vis.name}</h2>
-              <div className="visualization-placeholder">[Visualization]</div>
+              <ReactPlayer 
+                url={vis.video} 
+                width="100%" 
+                height="200px"
+                loop
+                playing
+                muted
+              />
             </div>
           ))}
         </section>
