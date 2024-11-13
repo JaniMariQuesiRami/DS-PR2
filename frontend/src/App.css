@@ -1,12 +1,12 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #373535;
+  background: linear-gradient(135deg, #2E2E2E, #0F172A);
 }
 
 .App {
@@ -50,7 +50,7 @@ header {
 }
 
 .visualization-card.selected {
-  border: 2px solid white;
+  border: 2px solid #00bfff;
   transform: scale(1.05);
 }
 
@@ -67,14 +67,13 @@ button.selected {
 .submit-button {
   margin-top: 40px;
   padding: 15px 30px;
-  background-color: #007bff;
+  background-color: black;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
   transform: scale(1.05);
 }
 
@@ -83,3 +82,78 @@ button.selected {
   overflow: hidden;
   padding-bottom: 10px;
 }
+
+.result-section {
+  margin-top: 100px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.neuron {
+  width: 20px;
+  height: 20px;
+  background-color: #00bfff;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.neuron:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.neuron:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.neuron:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.neuron:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.result-text {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #00bfff;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+  animation: fadeIn 2s ease-out, pulse2 1.5s infinite;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse2 {
+  0%, 100% {
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff;
+  }
+}
+
