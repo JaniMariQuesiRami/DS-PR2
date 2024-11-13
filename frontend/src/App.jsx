@@ -8,9 +8,9 @@ const App = () => {
   const [selectedModel, setSelectedModel] = useState(null);
 
   const visualizations = [
-    { id: 1, name: "Visualization 1", video: "./assets/1.mov" },
-    { id: 2, name: "Visualization 2", video: "./assets/2.mov" },
-    { id: 3, name: "Visualization 3", video: "./assets/3.mov" }
+    { id: 1, name: "3 creekhouse", video: "./assets/1.mov" },
+    { id: 2, name: "scales/kuhaylah", video: "./assets/2.mov" },
+    { id: 3, name: "1383 william lanier", video: "./assets/3.mov" }
   ];
 
   const models = ["Seq2Seq", "Transformer", "CTC"];
@@ -41,7 +41,7 @@ const App = () => {
   return (
     <div className="App">
       <div>
-        <img src={logo} alt="Your Logo" width="600" height="400" className="logo" />
+        <img src={logo} alt="Your Logo" width="450" height="300" className="logo" />
       </div>
       <main>
         <section className="visualizations">
@@ -52,18 +52,21 @@ const App = () => {
               onClick={() => setSelectedVisualization(vis.id)}
             >
               <h2>{vis.name}</h2>
-              <ReactPlayer 
-                url={vis.video} 
-                width="100%" 
-                height="200px"
-                loop
-                playing
-                muted
-              />
+              <div className="video-container">
+                <ReactPlayer 
+                  className="video-player"
+                  url={vis.video} 
+                  width="100%" 
+                  height="100%"
+                  loop
+                  playing
+                  muted
+                />
+              </div>
             </div>
           ))}
         </section>
-        <section className="visualizations">
+        <section className="visualizations" style={{ marginTop: "40px" }}>
           {models.map((model) => (
             <div
               key={model}
@@ -75,7 +78,7 @@ const App = () => {
           ))}
         </section>
         <button className="submit-button" onClick={handleSubmit}>
-          Submit Data
+          Submit
         </button>
       </main>
     </div>
