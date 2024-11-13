@@ -10,9 +10,9 @@ const ComparisonDashboard = () => {
   ];
 
   const levScores = [
-    { id: 1, title: 'CTC', score: 0.68 },
-    { id: 2, title: 'Seq2Seq', score: 0.78 },
-    { id: 3, title: 'Transformer', score: 0.91 },
+    { id: 1, title: 'CTC', score: 0.93 },
+    { id: 2, title: 'Seq2Seq', score: 0.76 },
+    { id: 3, title: 'Transformer', score: 0.45 },
   ];
 
   return (
