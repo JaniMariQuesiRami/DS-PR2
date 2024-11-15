@@ -4,17 +4,18 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import './App.css';
 import logo from './assets/logo.png';
+import { modelApiCall } from './helpers/modelHelper';
 
 const MainComponent = () => {
   const [selectedVisualization, setSelectedVisualization] = useState(null);
   const [selectedModel, setSelectedModel] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState('');
 
   const visualizations = [
-    { id: 1, name: "3 creekhouse", video: "./assets/1.mov" },
-    { id: 2, name: "scales/kuhaylah", video: "./assets/2.mov" },
-    { id: 3, name: "1383 william lanier", video: "./assets/3.mov" }
+    { id: 1, name: "3 creekhouse", video: "./assets/1.mov", phrase: "3 creekhouse" },
+    { id: 2, name: "scales/kuhaylah", video: "./assets/2.mov", phrase: "scales/kuhaylah" },
+    { id: 3, name: "1383 william lanier", video: "./assets/3.mov", phrase: "1383 william lanier" }
   ];
 
   const models = [
@@ -23,20 +24,25 @@ const MainComponent = () => {
     { name: "Transformer", description: "This attention-based model processes sequences in parallel, allowing it to capture long-range dependencies efficiently. Its architecture makes it particularly effective for structured sequence tasks like sign language translation, where context across the entire sequence is critical." }
   ];
 
-  const handleSubmit = () => {
-    if (selectedVisualization === null || !selectedModel) {
-      alert("Please select a phrase and a model.");
+  const handleSubmit = async () => {
+    if (!selectedVisualization || !selectedModel) {
+      alert('Please select both a visualization and a model.');
       return;
     }
 
-    setLoading(true);
-    setResult("");
+    const selectedPhrase = visualizations.find(vis => vis.id === selectedVisualization)?.phrase;
 
-    setTimeout(() => {
+    setLoading(true);
+    setResult('');
+
+    try {
+      const resultPhrase = await modelApiCall(selectedPhrase, selectedModel);
+      setResult(resultPhrase);
+    } catch (error) {
+      console.error(error);
+    } finally {
       setLoading(false);
-      const selectedVis = visualizations.find(v => v.id === selectedVisualization);
-      setResult(selectedVis?.name || "Prediction result");
-    }, 5000); 
+    }
   };
 
   return (
