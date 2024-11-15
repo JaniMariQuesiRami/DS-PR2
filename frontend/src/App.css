@@ -17,7 +17,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 50px;
 }
 
@@ -45,8 +45,7 @@ header {
 }
 
 .visualization-card.selected {
-  border: 2px solid #00bfff;
-  transform: scale(1.05);
+  border: 2px solid #99A7F2;
 }
 
 .submit-button {
@@ -91,7 +90,7 @@ header {
 .neuron {
   width: 20px;
   height: 20px;
-  background-color: #00bfff;
+  background-color: #99A7F2;
   border-radius: 50%;
   animation: pulse 1.5s infinite ease-in-out;
 }
@@ -123,9 +122,9 @@ header {
 .result-text {
   margin-top: 20px;
   font-size: 2rem;
-  color: #00bfff;
+  color: #99A7F2;
   font-weight: bold;
-  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+  text-shadow: 0 0 10px #99A7F2, 0 0 20px #99A7F2, 0 0 30px #99A7F2;
   animation: fadeIn 2s ease-out, pulse2 1.5s infinite;
   text-align: center;
 }
@@ -143,15 +142,15 @@ header {
 
 @keyframes pulse2 {
   0%, 100% {
-    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+    text-shadow: 0 0 10px #99A7F2, 0 0 20px #99A7F2, 0 0 30px #99A7F2;
   }
   50% {
-    text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff;
+    text-shadow: 0 0 20px #99A7F2, 0 0 30px #99A7F2, 0 0 40px #99A7F2;
   }
 }
 
 .tippy-box[data-theme~='custom'] {
-  background-color: #00bfff;
+  background-color: #99A7F2;
   color: #f1f1f1;
   font-size: 1.5rem;
   border-radius: 10px;
@@ -166,19 +165,19 @@ header {
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
-  border-top-color: #00bfff;
+  border-top-color: #99A7F2;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
-  border-bottom-color: #00bfff;
+  border-bottom-color: #99A7F2;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
-  border-left-color: #00bfff;
+  border-left-color: #99A7F2;
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
-  border-right-color: #00bfff;
+  border-right-color: #99A7F2;
 }
 
 .tippy-box[data-theme~='custom'] {
