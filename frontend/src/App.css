@@ -6,7 +6,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #2E2E2E, #0F172A);
+  /* background: linear-gradient(135deg, #2E2E2E, #0F172A); */
+  background-color: #2E2E2E;
   overflow-x: hidden;
 }
 
@@ -32,39 +33,20 @@ header {
   gap: 40px;
   margin-top: 20px;
 }
-
 .visualization-card {
   padding: 10px;
   width: 500px;
   background-color: #1e1e1e;
   border-radius: 25px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.visualization-placeholder {
-  height: 200px;
-  margin-bottom: 10px;
-}
-
-.visualization-card:hover {
-  transform: scale(1.05);
-  background-color: #1e1e1e;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3), 
+              inset -6px -6px 12px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .visualization-card.selected {
   border: 2px solid #00bfff;
   transform: scale(1.05);
-}
-
-.model-buttons button {
-  margin: 5px;
-  padding: 10px;
-}
-
-button.selected {
-  background-color: #007bff;
-  color: white;
 }
 
 .submit-button {
@@ -73,12 +55,19 @@ button.selected {
   background-color: #1e1e1e;
   color: white;
   border: none;
+  border-radius: 25px;
   cursor: pointer;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3), 
+              inset -6px -6px 12px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .submit-button:hover {
   transform: scale(1.05);
+  box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.4), 
+              inset -8px -8px 15px rgba(255, 255, 255, 0.2);
 }
+
 
 .video-container {
   border-radius: 15px;
@@ -161,14 +150,19 @@ button.selected {
   }
 }
 
-
 .tippy-box[data-theme~='custom'] {
-  background-color: #00bfff; 
-  color: #f1f1f1; 
+  background-color: #00bfff;
+  color: #f1f1f1;
   font-size: 1.5rem;
   border-radius: 10px;
   padding: 10px;
-  border: 1px solid #00bfff;
+  border: none;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.tippy-box[data-theme~='custom']:hover {
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4), 
 }
 
 .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {

@@ -34,6 +34,12 @@ const ComparisonDashboard = () => {
     { id: 3, title: 'Transformer', score: 0.45 },
   ];
 
+  const trainingTimes = [
+    { id: 1, title: 'CTC', epochs: '25 epochs', time: '3h 30m' },
+    { id: 2, title: 'Seq2Seq', epochs: '20 epochs', time: '1h' },
+    { id: 3, title: 'Transformer', epochs: '13 epochs', time: '30m' },
+  ];
+
   return (
     <div className="dashboard">
       <h1 className="dashboard-title">Model Loss Comparison</h1>
@@ -73,6 +79,25 @@ const ComparisonDashboard = () => {
           <div key={model.id} className="graph-card">
             <h2>{model.title}</h2>
             <p className="lev-score">{model.score}</p>
+          </div>
+        ))}
+      </div>
+
+      <Tippy 
+        content="Training was conducted on a GPU P100 using the Kaggle Notebooks runtime." 
+        theme="custom"
+      >
+        <h1 className="dashboard-title" style={{ marginTop: '100px', cursor: 'help' }}>
+          Training
+        </h1>
+      </Tippy>
+
+      <div className="graph-container" style={{ marginBottom: '100px' }}>
+        {trainingTimes.map((model) => (
+          <div key={model.id} className="graph-card">
+            <h2>{model.title}</h2>
+            <p className="lev-score">{model.epochs}</p>
+            <h2>{model.time}</h2>
           </div>
         ))}
       </div>

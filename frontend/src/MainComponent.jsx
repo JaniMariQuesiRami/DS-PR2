@@ -72,7 +72,7 @@ const MainComponent = () => {
               content={<span dangerouslySetInnerHTML={{ __html: model.description }} />}
               allowHTML={true}
               theme="custom"
-              key={model.name}
+              key={`${model.name}-${selectedModel === model.name ? 'active' : 'inactive'}`}
             >
               <div
                 className={`visualization-card ${selectedModel === model.name ? 'selected' : ''}`}
