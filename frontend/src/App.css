@@ -45,7 +45,7 @@ header {
 }
 
 .visualization-card.selected {
-  border: 2px solid #99A7F2;
+  border: 2px solid rgba(153, 167, 242, 0.5);
 }
 
 .submit-button {
@@ -59,6 +59,10 @@ header {
   box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.3), 
               inset -6px -6px 12px rgba(255, 255, 255, 0.1);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:focus {
+  outline: none;
 }
 
 .submit-button:hover {
@@ -193,4 +197,52 @@ header {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.Toastify {
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+/* Custom styles for Toastify to ensure visibility */
+.Toastify__toast-container {
+  z-index: 9999; /* Ensure it appears above other elements */
+}
+
+.Toastify__toast {
+  background-color: #1e1e1e; /* Dark background for toasts */
+  color: #ffffff; /* White text */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  padding: 16px;
+  font-size: 1rem; /* Adjust font size */
+}
+
+.Toastify__toast--error {
+  background-color: #ff4d4f; /* Custom color for error toasts */
+}
+
+.Toastify__toast--success {
+  background-color: #99A7F2; /* Custom color for success toasts */
+}
+
+.Toastify__close-button {
+  color: #ffffff; /* Close button color */
+  opacity: 0.8;
+}
+
+/* close button focus none border */
+.Toastify__close-button:focus {
+  outline: none;
+}
+
+.Toastify__close-button:hover {
+  opacity: 1;
+}
+
+.Toastify__progress-bar {
+  background-color: #99A7F2; /* Custom progress bar color */
+}
+
+.Toastify__toast-icon svg {
+  fill: #99A7F2; /* Custom color for the "i" icon */
 }

@@ -5,6 +5,8 @@ import 'tippy.js/dist/tippy.css';
 import './App.css';
 import logo from './assets/logo.png';
 import { modelApiCall } from './helpers/modelHelper';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const MainComponent = () => {
   const [selectedVisualization, setSelectedVisualization] = useState(null);
@@ -24,9 +26,14 @@ const MainComponent = () => {
     { name: "Transformer", description: "This attention-based model processes sequences in parallel, allowing it to capture long-range dependencies efficiently. Its architecture makes it particularly effective for structured sequence tasks like sign language translation, where context across the entire sequence is critical." }
   ];
 
+  const notifyError = (message) => {
+    console.log(message);
+    toast.info(message, { position: 'top-center' });
+  };
+
   const handleSubmit = async () => {
     if (!selectedVisualization || !selectedModel) {
-      alert('Please select both a visualization and a model.');
+      notifyError('Please select both a visualization and a model.');
       return;
     }
 
@@ -89,7 +96,12 @@ const MainComponent = () => {
             </Tippy>
           ))}
         </section>
-        <button className="submit-button" onClick={handleSubmit}>
+        <button
+          className="submit-button"
+          onClick={handleSubmit}
+          disabled={loading} 
+          style={{ opacity: loading ? 0.5 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
+        >
           Submit
         </button>
 

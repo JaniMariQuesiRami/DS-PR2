@@ -1,14 +1,21 @@
 import React from 'react';
 import './TopBar.css';
 import { FaGithub } from 'react-icons/fa';
+import { SiKaggle } from 'react-icons/si';
 
 const TopBar = () => {
   return (
     <div className="top-bar">
-      <div className="logo">
-      </div>
       <a 
-        href="https://github.com/JaniMariQuesiRami/DS-PR2"
+        href="https://www.kaggle.com/competitions" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="kaggle-link"
+      >
+        <SiKaggle size={50} />
+      </a>
+      <a 
+        href="https://github.com/JaniMariQuesiRami/DS-PR2" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="github-link"
