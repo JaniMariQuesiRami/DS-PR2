@@ -7,7 +7,7 @@ const TopBar = () => {
   return (
     <div className="top-bar">
       <a 
-        href="https://www.kaggle.com/competitions" 
+        href="https://www.kaggle.com/competitions/asl-fingerspelling/rules"
         target="_blank" 
         rel="noopener noreferrer" 
         className="kaggle-link"

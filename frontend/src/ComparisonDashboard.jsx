@@ -40,6 +40,24 @@ const ComparisonDashboard = () => {
     { id: 3, title: 'Transformer', epochs: '13 epochs', time: '30m' },
   ];
 
+  const strengthsWeaknesses = [
+    { 
+      model: 'Transformer', 
+      strengths: ['Handles long-term dependencies', 'Highly parallelizable, speeds up training'], 
+      weaknesses: ['Requires large datasets and computing power', 'Less effective with raw time series data without modifications'] 
+    },
+    { 
+      model: 'Seq2Seq', 
+      strengths: ['Effective for sequence mapping tasks', 'Flexible for translations or structured sequences'], 
+      weaknesses: ['Hard to manage long sequences due to memory issues', 'May lose context in long sequences due to its recurrent nature'] 
+    },
+    { 
+      model: 'CTC', 
+      strengths: ['No need for explicit alignment, great for continuous sequences like ASL', 'Handles variable-length sequences'], 
+      weaknesses: ['Dependent on preprocessing for segmenting gestures', 'May not capture long-term context as well as Transformer'] 
+    },
+  ];
+
   return (
     <div className="dashboard">
       <h1 className="dashboard-title">Model Loss Comparison</h1>
@@ -100,6 +118,43 @@ const ComparisonDashboard = () => {
             <h2>{model.time}</h2>
           </div>
         ))}
+      </div>
+      <h1 className="dashboard-title" style={{ marginTop: '100px' }}>
+        Strengths & Weaknesses Comparison
+      </h1>
+      <div className="single-card-container">
+        <div className="strengths-weaknesses-card">
+          <table className="strengths-weaknesses-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Strengths</th>
+                <th>Weaknesses</th>
+              </tr>
+            </thead>
+            <tbody>
+              {strengthsWeaknesses.map((entry) => (
+                <tr key={entry.model} className="table-header">
+                  <td>{entry.model}</td>
+                  <td>
+                    <ul className="strengths-list">
+                      {entry.strengths.map((strength, idx) => (
+                        <li key={idx}>{strength}</li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul className="weaknesses-list">
+                      {entry.weaknesses.map((weakness, idx) => (
+                        <li key={idx}>{weakness}</li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
